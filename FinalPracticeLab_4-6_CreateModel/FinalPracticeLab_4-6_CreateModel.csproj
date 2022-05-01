@@ -52,7 +52,11 @@
     <Compile Include="CreateModel.cs" />
     <Compile Include="Lib\LevelsUtils.cs" />
     <Compile Include="Lib\CornersUtils.cs" />
+    <Compile Include="Lib\DoorsUtils.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Lib\WallsUtils.cs" />
+    <Compile Include="Lib\WindowUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
