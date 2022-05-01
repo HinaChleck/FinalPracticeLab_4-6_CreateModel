@@ -55,6 +55,7 @@
     <Compile Include="Lib\DoorsUtils.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Lib\RoofUtils.cs" />
     <Compile Include="Lib\WallsUtils.cs" />
     <Compile Include="Lib\WindowUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

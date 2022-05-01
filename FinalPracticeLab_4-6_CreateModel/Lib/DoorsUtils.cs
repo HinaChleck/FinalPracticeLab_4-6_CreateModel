@@ -10,7 +10,7 @@ namespace FinalPracticeLab_4_6_CreateModel
 {
     internal class DoorsUtils
     {
-       public static FamilySymbol GetDoorType (Document doc, string doorFamilySymbolName, string doorFamilyName)
+        public static FamilySymbol GetDoorType(Document doc, string doorFamilySymbolName, string doorFamilyName)
         {
 
             FamilySymbol doorType = new FilteredElementCollector(doc)
@@ -31,9 +31,7 @@ namespace FinalPracticeLab_4_6_CreateModel
             XYZ point2 = hostCurve.Curve.GetEndPoint(1);
             XYZ point = (point1 + point2) / 2;
 
-           
-
-            Transaction transaction = new Transaction(doc, "Построение стен");
+            Transaction transaction = new Transaction(doc, "Вставка дверей");
             transaction.Start();
 
             if (!doorType.IsActive)
@@ -44,7 +42,7 @@ namespace FinalPracticeLab_4_6_CreateModel
             transaction.Commit();
             return door;
         }
-        
+
 
     }
 }

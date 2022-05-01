@@ -30,7 +30,7 @@ namespace FinalPracticeLab_4_6_CreateModel
             XYZ point2 = hostCurve.Curve.GetEndPoint(1);
             XYZ point = (point1 + point2) / 2;
 
-            Transaction transaction = new Transaction(doc, "Построение окон");
+            Transaction transaction = new Transaction(doc, "Вставка окон");
             transaction.Start();
 
             if (!windowType.IsActive)

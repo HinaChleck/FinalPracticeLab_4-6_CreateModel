@@ -1,4 +1,5 @@
-﻿using Autodesk.Revit.Attributes;
+﻿using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Architecture;
 using Autodesk.Revit.DB.Structure;
@@ -37,28 +38,30 @@ namespace FinalPracticeLab_4_6_CreateModel
 
             string doorFamilySymbolName = "0915 x 2134 мм";
             string doorFamilyName = "M_Однопольные - Щитовые";
-                        
+
             FamilySymbol doorType = DoorsUtils.GetDoorType(doc, doorFamilySymbolName, doorFamilyName);
 
-            //Wall wall = walls[1];
-
-            FamilyInstance door = DoorsUtils.AddDoor(doc, doorType, walls[3]);
+            DoorsUtils.AddDoor(doc, doorType, walls[3]);
 
             string windowFamilySymbolName = "0915 x 1220 мм";
             string windowFamilyName = "M_Неподвижный";
 
             FamilySymbol windowType = WindowUtils.GetWindowType(doc, windowFamilySymbolName, windowFamilyName);
 
-            FamilyInstance window1 = WindowUtils.AddWindow(doc, windowType, walls[0]);
-            FamilyInstance window2 = WindowUtils.AddWindow(doc, windowType, walls[1]);
-            FamilyInstance window3 = WindowUtils.AddWindow(doc, windowType, walls[2]);
-            
+            WindowUtils.AddWindow(doc, windowType, walls[0]);
+            WindowUtils.AddWindow(doc, windowType, walls[1]);
+            WindowUtils.AddWindow(doc, windowType, walls[2]);
 
+            string roofFamilyType = "Типовая крыша - 300мм";
+            string roofFamilyName = "Базовая крыша";
+
+            RoofType roofType = RoofUtils.GetRoofType(doc, roofFamilyType, roofFamilyName);
+            // FootPrintRoof footprintRoof = RoofUtils.CreateFootprintRoof(doc, level2, walls, roofType); // построение крыши по контуру основания
+
+            ExtrusionRoof extrusionRoof = RoofUtils.CreateExtrusionRoof(doc, level2, walls[0], roofType); // построение крыши выдавливания
 
             return Result.Succeeded;
         }
-
-       
 
     }
 }
