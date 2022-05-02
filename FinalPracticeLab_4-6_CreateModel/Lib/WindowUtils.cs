@@ -18,7 +18,7 @@ namespace FinalPracticeLab_4_6_CreateModel
            .OfCategory(BuiltInCategory.OST_Windows)
            .OfType<FamilySymbol>()
            .Where(x => x.Name.Equals(windowFamilySymbolName))//искомое значение FamilySymbol типоразмера
-           //.Where(x => x.FamilyName.Equals(doorFamilyName)) c этой строкой не работает. windowType в итоге null
+           .Where(x => x.FamilyName.Equals(windowFamilyName))//c этой строкой не работает. windowType в итоге null
            .FirstOrDefault();
 
             return windowType;

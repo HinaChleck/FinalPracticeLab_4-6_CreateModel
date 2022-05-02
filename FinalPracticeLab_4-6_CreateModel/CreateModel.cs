@@ -37,7 +37,7 @@ namespace FinalPracticeLab_4_6_CreateModel
             List<Wall> walls = WallsUtils.CreateWallsWithPoints(doc, level1, level2, points);
 
             string doorFamilySymbolName = "0915 x 2134 мм";
-            string doorFamilyName = "M_Однопольные - Щитовые";
+            string doorFamilyName = "M_Однопольные-Щитовые";
 
             FamilySymbol doorType = DoorsUtils.GetDoorType(doc, doorFamilySymbolName, doorFamilyName);
 

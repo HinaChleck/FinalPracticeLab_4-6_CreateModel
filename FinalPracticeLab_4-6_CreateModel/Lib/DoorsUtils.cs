@@ -18,7 +18,7 @@ namespace FinalPracticeLab_4_6_CreateModel
                 .OfCategory(BuiltInCategory.OST_Doors)
                 .OfType<FamilySymbol>()
                 .Where(x => x.Name.Equals(doorFamilySymbolName))//искомое значение FamilySymbol типоразмера
-                //.Where(x => x.FamilyName.Equals(doorFamilyName))
+                .Where(x => x.FamilyName.Equals(doorFamilyName))
                 .FirstOrDefault();
 
 
