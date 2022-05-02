@@ -27,7 +27,7 @@ namespace FinalPracticeLab_4_6_CreateModel
         {
 
             Level level = listLevel
-                .Where(x => x.Name.Equals("Уровень 1"))
+                .Where(x => x.Name.Equals(levelName))
                 .FirstOrDefault();
 
             return level;
